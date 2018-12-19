@@ -12,7 +12,7 @@ import edan
 
 ## Search EDAN
 
-Search EDAN:
+Set your credentials and use `edan.searchEDAN()`:
 
 ```python
 #EDAN creds
@@ -29,17 +29,35 @@ results['rowCount']
 results_rows = results['rows']
 ```
 
+`searchEDAN()` takes these arguments:
+
+ * edan_query = Search items
+ * AppID = Your AppID
+ * AppKey = Your AppKey
+ * rows = How many rows to return, max is 100, default is 10
+ * start = Which row to start the results, default is 0
+
 ## Get details of a single item using the item ID
 
 ```python
 import json
 
 item = edan.getContentEDAN(results['rows'][0]['url'], AppID, AppKey)
+```
 
+`getContentEDAN()` takes these arguments:
+
+ * edan_id = ID of the item (`e.g.` "edanmdm:ofeo-sg_2012-1080A")
+ * AppID = Your AppID
+ * AppKey = Your AppKey
+ 
+To see the details of the item:
+
+```python
 print(json.dumps(item, sort_keys = True, indent = 4))
 ```
 
-Returns:
+This returns:
 
 ```json
 {
