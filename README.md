@@ -29,7 +29,7 @@ results['rowCount']
 results_rows = results['rows']
 ```
 
-`searchEDAN()` takes these arguments:
+The function `searchEDAN()` takes these arguments:
 
  * edan_query = Search items
  * AppID = Your AppID
@@ -45,7 +45,7 @@ import json
 item = edan.getContentEDAN(results['rows'][0]['url'], AppID, AppKey)
 ```
 
-`getContentEDAN()` takes these arguments:
+The function `getContentEDAN()` takes these arguments:
 
  * edan_id = ID of the item (`e.g.` "edanmdm:ofeo-sg_2012-1080A")
  * AppID = Your AppID
