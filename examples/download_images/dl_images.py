@@ -29,6 +29,6 @@ for file in files_list:
                     wget.download(idsID, 'images/{}'.format(Path(idsID).name))
                     break
                 else:
-                    wget.download("https://ids.si.edu/ids/deliveryService?id={}".format(idsID), 'images/{}.jpg'.format(Path(idsID).name))
+                    wget.download("https://ids.si.edu/ids/deliveryService?id={}".format(idsID), 'images/{}.jpg'.format(idsID))
                     break
     print('\n')
