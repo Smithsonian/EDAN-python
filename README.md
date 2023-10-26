@@ -1,3 +1,5 @@
+![EDAN API](https://badgen.net/static/EDAN%20API/down/red)
+
 # EDAN python
 
 Basic python3 module to query the Smithsonian's Enterprise Digital Asset Network (EDAN).
