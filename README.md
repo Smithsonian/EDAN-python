@@ -1,4 +1,4 @@
-![EDAN API](https://badgen.net/static/EDAN%20API/down/red)
+![EDAN API](https://badgen.net/static/EDAN%20API/up/green)
 
 # EDAN python
 
