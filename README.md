@@ -15,7 +15,7 @@ pip install edan
 Then, load the module:
 
 ```python
-import edan
+from edan import edan
 ```
 
 ## Search EDAN
