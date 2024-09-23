@@ -2,7 +2,7 @@
 
 # EDAN python
 
-Basic python3 module to query the Smithsonian's Enterprise Digital Asset Network (EDAN).
+Basic python3 module to query the Smithsonian's Enterprise Digital Asset Network (EDAN). Requires Python 3.11 or higher.
 
 ## Installation
 
@@ -12,9 +12,7 @@ Install using pip:
 pip install edan
 ```
 
-## Load the module
-
-Save the file `edan.py` and load it as a module:
+Then, load the module:
 
 ```python
 import edan
@@ -22,7 +20,7 @@ import edan
 
 ## Search EDAN
 
-Set your credentials and use `edan.searchEDAN()`:
+Set your credentials and use `edan.edan_metadata_search()`:
 
 ```python
 #EDAN creds
@@ -30,7 +28,7 @@ AppID = "APP_ID"
 AppKey = "verylong_key"
 
 #Search for images of orchids from Smithsonian Gardens
-results = edan.edan_metadata_search("orchids smithsonian gardens images", AppID, AppKey)
+results = edan.edan_metadata_search("orchids smithsonian gardens images", AppID=AppID, AppKey=AppKey)
 
 #Number of results available for this search
 results['rowCount']
@@ -42,6 +40,7 @@ results_rows = results['rows']
 The function `edan_metadata_search()` takes these arguments:
 
  * edan_query = Search items
+ * fqs = JSON array of filter query parameters
  * AppID = Your AppID
  * AppKey = Your AppKey
  * rows = How many rows to return, max is 100, default is 10
@@ -52,7 +51,7 @@ The function `edan_metadata_search()` takes these arguments:
 ```python
 import json
 
-item = edan.edan_content_getcontent(results['rows'][0]['url'], AppID, AppKey)
+item = edan.edan_content_getcontent(results['rows'][0]['url'], AppID=AppID, AppKey=AppKey)
 ```
 
 The function `edan_content_getcontent()` takes these arguments (must provide `id` or `url`):
