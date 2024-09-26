@@ -13,7 +13,7 @@ pip install edan
 Then, load the module in Python:
 
 ```python
-from edan import edan
+import edan
 ```
 
 You will need an ID and key, make the request in ServiceNow: https://edandoc.si.edu/more.html#auth
