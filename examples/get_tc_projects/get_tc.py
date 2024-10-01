@@ -8,11 +8,6 @@ import settings
 import math
 from tqdm import tqdm
 
-# # Parallel
-# import multiprocessing
-# from p_tqdm import p_map
-
-# no_workers = (multiprocessing.cpu_count()) - 1
 
 # Get number of rows in result
 results = edan.metadata_search(edan_schema="transproject", AppID=settings.AppID, AppKey=settings.AppKey, rows=1)
@@ -22,9 +17,11 @@ no_requests = math.floor(no_rows / 100)
 # dataframe
 res_pd = pd.DataFrame()
 
+# Loop to get all rows
 for i in tqdm(range(no_requests)):
     start_val = i*100
     results = edan.metadata_search(edan_schema="transproject", AppID=settings.AppID, AppKey=settings.AppKey, rows=100, start=start_val)
+    # Append rows to DF
     res_pd = pd.concat([res_pd, pd.json_normalize(results['rows'])])
 
 
